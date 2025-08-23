@@ -32,4 +32,4 @@ jobs:
         run: sleep 5
       
       - name: Rodar os testes External
-        run: nom run test-external
+        run: npm run test-external
