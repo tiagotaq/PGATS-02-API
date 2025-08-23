@@ -70,7 +70,10 @@ describe('Transfer Controller', () => {
                     amount: 100
                 });
             expect(resposta.status).to.equal(201)
-            expect(resposta.body).to.have.property('from', 'tiago')
+
+            const respostaEsperada = require('../fixture/respostas/quandoInformoValoresValidosTenhoUm201.json')
+            delete resposta.body.date
+            expect(resposta.body).to.deep.equal(respostaEsperada)
 
             //reseto o mock
             sinon.restore();
